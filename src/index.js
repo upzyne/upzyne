@@ -1,3 +1,4 @@
+// src/index.js
 const express = require('express');
 const app = express();
 const PORT = 4000;
@@ -9,8 +10,11 @@ const authRoutes = require('./routes/authRoutes');
 
 app.use(express.json());
 
-app.use('/api', authRoutes);       // /api/login
-app.use('/api', licenseRoutes);    // /api/licenses (secured)
+// Public
+app.use('/api', authRoutes);
+
+// Protected
+app.use('/api', licenseRoutes);
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
