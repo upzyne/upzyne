@@ -1,0 +1,14 @@
+{
+  "license": [
+    {
+      "tenantid": 1002,
+      "tenant_name": "Infusyx",
+      "clientid": "INFUSYX",
+      "appid": 2,
+      "productname": "Upzyne Lead Management",
+      "validupto": "2026-04-23T18:30:41.498+05:30",
+      "isactive": true,
+      "license_status": "Valid"
+    }
+  ]
+}
