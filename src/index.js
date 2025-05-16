@@ -1,21 +1,19 @@
-require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-
 const app = express();
-const port = process.env.PORT || 4000;
+const PORT = 4000;
+const licenseRoutes = require('./routes/licenseRoutes');
 
-app.use(cors({
-  origin: process.env.FRONTEND_URL
-}));
+require('dotenv').config();
 
 app.use(express.json());
 
-const usersRouter = require('./routes/users');
-app.use('/api/users', usersRouter);
+// Routes
+app.use('/api', licenseRoutes);
 
-app.get('/', (req, res) => res.send('API is running!'));
+app.get('/', (req, res) => {
+  res.send('Upzyne API Running...');
+});
 
-app.listen(port, () => {
-  console.log(`✅ Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
